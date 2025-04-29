@@ -21,7 +21,6 @@ fun main() {
         val channel = Channel<Command>()
         val race = Race(cars, goal, channel)
         val commandScope = listenCommand(race, channel)
-
         race.startRace()
         commandScope.cancel()
     }
